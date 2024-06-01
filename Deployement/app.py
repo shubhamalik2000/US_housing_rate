@@ -47,7 +47,7 @@ st.image(r"Deployement/population.png", caption= 'As the population is increasin
 
 st.text('Let us understand the data further!')
 
-st.image(r"corr.png")
+st.image(r"Deployement/corr.png")
 
 st.write('''__Conclusion:__
 
@@ -60,7 +60,7 @@ st.write('''__Conclusion:__
 __Note:__
 
 - The features are also correlated with each other, so let us find out, because if we are to build model, then we might consider dropping them.''')
-st.image(r"corr2.png")
+st.image(r"Deployement/corr2.png")
 
 st.write('''__Note:__
 
@@ -70,18 +70,18 @@ We can also see one more thing here, the other features are also correlated with
 
 st.write('Let us take a closer look at the month index')
 
-st.image(r"month_close.png")
+st.image(r"Deployement/month_close.png")
 
 st.write('''So, can we assume from here that the prices of the house took a dip in the 2nd month of the year and after that it increased up until the end of the year!''')
 
 st.write('Let us also understand the frequency distribution of the cost_index')
-st.image(r"distribution.png")
+st.image(r"Deployement/distribution.png")
 
 st.write('So, we dropped the following columns: Population, CPI and per capita GDP. We kept the Year column because it is easy to interpret.')
 
 st.header('Model building')
 
-st.image(r"Models.png")
+st.image(r"Deployement/Models.png")
 
 st.write('So, we would use the Random forest regressor for our prediction')
 
