@@ -94,7 +94,7 @@ federal_fund = st.number_input('Enter federal fund rate')
 housing = st.number_input('Enter housing supply value')
 year = st.number_input('Enter year', min_value= 2000, max_value=3000, step= 1)
 
-model = pk.load(open(r'modelRF.pkl', 'rb'))
+model = pk.load(open(r'Deployement/modelRF.pkl', 'rb'))
 
 if st.button('Predict'):
     val = model.predict([[unemployement_rate,mortgage, federal_fund, housing, year]])
