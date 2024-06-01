@@ -35,19 +35,19 @@ st.text('Note: as the data extracted is monthly, \n  so we also have month and y
 st.header('Bi-variate analysis')
 st.text('This is what we understood from the data and the patterns')
 
-st.image(r"C:\Users\LENOVO\US Housing price\Uemployemet Rate.png", caption='cost_index tends to rise with decrease in the employement rate')
-st.image(r"C:\Users\LENOVO\US Housing price\mortgage.png", caption= 'No clear relation between cost_index and mortgage fund rate')
-st.image(r"C:\Users\LENOVO\US Housing price\federal_rate.png", caption= 'No clear relation netween cost_index and federal rate')
-st.image(r"C:\Users\LENOVO\US Housing price\housing_supply.png", caption= 'Initially decrease in housing supply reduced the cost_index, but then pattern changed')
-st.image(r"C:\Users\LENOVO\US Housing price\Year.png", caption= 'As we are moving forward in time, the cost_index is increasing')
-st.image(r"C:\Users\LENOVO\US Housing price\Month.png", caption= 'There is no clear relation between cost_index and month')
-st.image(r"C:\Users\LENOVO\US Housing price\gdp_pCapita.png", caption= 'As the per capita GDP is increasing, the cost_index is also increasing')
-st.image(r"C:\Users\LENOVO\US Housing price\cpi.png", caption= 'As the Consumer price inflation is increasing, cost_index is also increasing')
-st.image(r"C:\Users\LENOVO\US Housing price\population.png", caption= 'As the population is increasing, cost_index is also increasing')
+st.image(r"Uemployemet Rate.png", caption='cost_index tends to rise with decrease in the employement rate')
+st.image(r"mortgage.png", caption= 'No clear relation between cost_index and mortgage fund rate')
+st.image(r"federal_rate.png", caption= 'No clear relation netween cost_index and federal rate')
+st.image(r"housing_supply.png", caption= 'Initially decrease in housing supply reduced the cost_index, but then pattern changed')
+st.image(r"Year.png", caption= 'As we are moving forward in time, the cost_index is increasing')
+st.image(r"Month.png", caption= 'There is no clear relation between cost_index and month')
+st.image(r"gdp_pCapita.png", caption= 'As the per capita GDP is increasing, the cost_index is also increasing')
+st.image(r"cpi.png", caption= 'As the Consumer price inflation is increasing, cost_index is also increasing')
+st.image(r"population.png", caption= 'As the population is increasing, cost_index is also increasing')
 
 st.text('Let us understand the data further!')
 
-st.image(r"C:\Users\LENOVO\US Housing price\corr.png")
+st.image(r"corr.png")
 
 st.write('''__Conclusion:__
 
@@ -60,7 +60,7 @@ st.write('''__Conclusion:__
 __Note:__
 
 - The features are also correlated with each other, so let us find out, because if we are to build model, then we might consider dropping them.''')
-st.image(r"C:\Users\LENOVO\US Housing price\corr2.png")
+st.image(r"corr2.png")
 
 st.write('''__Note:__
 
@@ -70,18 +70,18 @@ We can also see one more thing here, the other features are also correlated with
 
 st.write('Let us take a closer look at the month index')
 
-st.image(r"C:\Users\LENOVO\US Housing price\month_close.png")
+st.image(r"month_close.png")
 
 st.write('''So, can we assume from here that the prices of the house took a dip in the 2nd month of the year and after that it increased up until the end of the year!''')
 
 st.write('Let us also understand the frequency distribution of the cost_index')
-st.image(r"C:\Users\LENOVO\US Housing price\distribution.png")
+st.image(r"distribution.png")
 
 st.write('So, we dropped the following columns: Population, CPI and per capita GDP. We kept the Year column because it is easy to interpret.')
 
 st.header('Model building')
 
-st.image(r"C:\Users\LENOVO\US Housing price\Models.png")
+st.image(r"Models.png")
 
 st.write('So, we would use the Random forest regressor for our prediction')
 
@@ -94,7 +94,7 @@ federal_fund = st.number_input('Enter federal fund rate')
 housing = st.number_input('Enter housing supply value')
 year = st.number_input('Enter year', min_value= 2000, max_value=3000, step= 1)
 
-model = pk.load(open(r'C:\Users\LENOVO\US Housing price\modelRF.pkl', 'rb'))
+model = pk.load(open(r'modelRF.pkl', 'rb'))
 
 if st.button('Predict'):
     val = model.predict([[unemployement_rate,mortgage, federal_fund, housing, year]])
